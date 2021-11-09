@@ -10,24 +10,23 @@ namespace EmployeeWageComputation
     {
         const int IS_FULLTIME = 0,IS_PARTTIME=1,WAGE_PER_HR=20,FULLTIME_HR=8,PARTTIME_HR=4;
         Random random = new Random();
-        public void dailyemployeewage()
+        public void dailyemployeewageswitch()
         {
             int check = random.Next(0, 3);
-            int emp_hours=0;
-            if (check == IS_FULLTIME)
+            int emp_hours=0, Dailywage;
+            switch (check)
             {
-                emp_hours += FULLTIME_HR;
+                case IS_FULLTIME:
+                    emp_hours += FULLTIME_HR;
+                    break;
+                case IS_PARTTIME:
+                    emp_hours += PARTTIME_HR;
+                    break;
+                default:
+                    emp_hours = 0;
+                    break;
             }
-            if(check==IS_PARTTIME)
-            {
-                emp_hours += PARTTIME_HR;
-            }
-            else
-            {
-                Console.WriteLine("employee is absent");
-                emp_hours = 0;
-            }
-            int Dailywage = WAGE_PER_HR * emp_hours;
+            Dailywage = WAGE_PER_HR * emp_hours;
             Console.WriteLine("employee is daily wage is " + Dailywage);
         }
     }
