@@ -8,7 +8,7 @@ namespace EmployeeWageComputation
         {
             Console.WriteLine("welcome to employee wage computation");
             EmployeeWageCalculation emp = new EmployeeWageCalculation();
-            emp.monthlyemployeewages();  
+            emp.employeewagestillcondition();  
         }
     }
 }

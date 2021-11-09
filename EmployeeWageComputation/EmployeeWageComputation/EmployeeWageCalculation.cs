@@ -8,12 +8,12 @@ namespace EmployeeWageComputation
 {
     class EmployeeWageCalculation
     {
-        const int IS_FULLTIME = 0,IS_PARTTIME=1,WAGE_PER_HR=20,FULLTIME_HR=8,PARTTIME_HR=4,TOTAL_DAYS=20;
+        const int IS_FULLTIME = 0,IS_PARTTIME=1,WAGE_PER_HR=20,FULLTIME_HR=8,PARTTIME_HR=4,MAX_WORKING_DAYS=20,MAX_WORKING_HOURS=100;
         Random random = new Random();
-        public void monthlyemployeewages()
+        public void employeewagestillcondition()
         {
-            int emp_hours = 0, Dailywage=0,Monthlywage = 0;
-            for (int day = 0; day < TOTAL_DAYS; day++)
+            int emp_hours = 0, Dailywage=0,Monthlywage = 0,emp_days=0;
+            while(emp_days < MAX_WORKING_DAYS && emp_hours < MAX_WORKING_HOURS)
             {
                 int check = random.Next(0, 3);
                 switch (check)
@@ -32,6 +32,8 @@ namespace EmployeeWageComputation
                 }
                 Dailywage = WAGE_PER_HR * emp_hours;
                 Monthlywage += Dailywage;
+                emp_hours++;
+                emp_days++;
             }
             Console.WriteLine("employee is monthly wage is " + Monthlywage);
         }
