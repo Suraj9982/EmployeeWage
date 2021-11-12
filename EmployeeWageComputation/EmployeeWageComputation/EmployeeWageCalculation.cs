@@ -12,7 +12,7 @@ namespace EmployeeWageComputation
         Random random = new Random();
         public void employeewagestillcondition()
         {
-            int emp_hours = 0, Dailywage=0,Monthlywage = 0,emp_days=0;
+            int emp_hours = 0, dailywage=0,monthlywage = 0,emp_days=0;
             while(emp_days < MAX_WORKING_DAYS && emp_hours < MAX_WORKING_HOURS)
             {
                 int check = random.Next(0, 3);
@@ -27,15 +27,14 @@ namespace EmployeeWageComputation
                         Console.WriteLine("employee is parttime");
                         break;
                     default:
-                        emp_hours = 0;
+                        emp_hours += 0;
                         break;
                 }
-                Dailywage = WAGE_PER_HR * emp_hours;
-                Monthlywage += Dailywage;
-                emp_hours++;
+                dailywage = WAGE_PER_HR * emp_hours;
+                monthlywage += dailywage;
                 emp_days++;
             }
-            Console.WriteLine("employee is monthly wage is " + Monthlywage);
+            Console.WriteLine("employee is monthly wage is " + monthlywage);
         }
     }
 }
